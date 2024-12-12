@@ -1,0 +1,9 @@
+// Main class to test the implementation
+public class VechileTest{
+    public static void main(String[] args) {
+        MyVehicle Myvechile = new Myvechile();
+       System.out.println(Myvechile.start());
+       System.out.println(Myvechile.move());
+       System.out.println(Myvechile.stop());
+    }
+}

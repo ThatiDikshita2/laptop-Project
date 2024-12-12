@@ -1,0 +1,9 @@
+package oops;
+// Using Inheritance
+//Child class
+public class Smartphone extends Phone {
+        public void browsing() {
+        	System.out.println("browsing...");
+        }
+
+}

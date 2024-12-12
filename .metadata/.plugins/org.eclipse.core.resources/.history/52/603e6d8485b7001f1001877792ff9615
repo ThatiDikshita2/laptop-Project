@@ -1,0 +1,21 @@
+package com.edubbridge.maven_project1;
+
+public class CalcTest {
+	
+	@Test
+  public void testFindSquare() {
+	  Calc c = new Calc();
+	  int actual=c.findSquare(10);
+	  int excepted = 100;
+	  
+	  Assertions.assertEquals(expected, actual);
+  }
+	@Test
+  public void testFindCube() {
+	  Calc c = new Calc();
+	  int actual=c.findCube(10);
+	  int excepted = 1000;
+	  
+	  Assertions.assertEquals(expected, actual);
+  }
+}

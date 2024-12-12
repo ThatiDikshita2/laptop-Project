@@ -1,0 +1,34 @@
+// Define the Vehicle interface
+interface Vehicle {
+    void start();
+    void move();
+    void stop();
+}
+
+// Implement the Vehicle interface in the Car class
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car is starting.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Car is moving.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car has stopped.");
+    }
+}
+
+// Main class to test the implementation
+public class Main {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car();
+        myCar.start();
+        myCar.move();
+        myCar.stop();
+    }
+}

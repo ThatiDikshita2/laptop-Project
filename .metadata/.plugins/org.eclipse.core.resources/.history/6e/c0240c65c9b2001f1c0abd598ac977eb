@@ -1,0 +1,37 @@
+package multithreading;
+
+//1.Creating user defined thread using Thread class
+class JavaThread extends Thread{
+	@Override
+	public void run() {
+		//Define thread job
+		for(int i=1; i<=10; i++){
+		System.out.println("Java-"+i);
+		}
+	}
+}
+//2.Creating user defined thread using Runnable interface
+ class PythonThread implements Runnable{
+	 @Override
+		public void run() {
+			//Define thread job
+			for(int i=1; i<=10; i++){
+			System.out.println("Python-"+i);
+			}
+		} 
+ }
+
+public class ThreadDemo {
+
+	public static void main(String[] args) {
+	JavaThread j = new JavaThread();
+	j.start(); //begin thread execution
+	//j.run(); //new thread won't be started
+	
+      //main thread job
+	for(int i=1; i<10; i++) {
+		System.out.println("Main-"+i);
+	}
+	}
+
+}

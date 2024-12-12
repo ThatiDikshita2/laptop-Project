@@ -1,0 +1,8 @@
+package oops;
+
+public class Smartphone extends Phone {
+        public void browsing() {
+        	System.out.println("browsing...");
+        }
+
+}

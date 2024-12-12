@@ -1,0 +1,31 @@
+package oops;
+
+//static method is extract by its class name
+// Same method and different arguments
+class MyCalc{
+	public static int findMax(int x, int y) {
+		return (x>y) ? x : y;
+	}
+	public static double findMax(double x, double y) {
+		return (x>y) ? x : y;
+	}
+	public static long findMax(long x,long y) {
+		return (x>y) ? x :y;
+	}
+}
+public class OverloadingDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       int maxInt = MyCalc.findMax(100, 200);
+       System.out.println(maxInt);
+       
+       Double maxDouble = MyCalc.findMax(10.5, 20.0);
+       System.out.println(maxDouble);
+       
+       long maxlong = MyCalc.findMax(456789l, 298766l);
+       System.out.println(maxlong);
+       
+	}
+
+}

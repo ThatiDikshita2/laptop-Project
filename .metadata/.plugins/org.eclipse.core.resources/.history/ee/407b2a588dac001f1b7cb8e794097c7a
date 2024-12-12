@@ -1,0 +1,7 @@
+public class EmployeeTest {
+	public static void main(String[] args) {
+		//  Obbject Creation or Instantion
+		Employee e1 = new Employee(1001, "Wills", 6.5);
+		System.out.println	
+	}
+}

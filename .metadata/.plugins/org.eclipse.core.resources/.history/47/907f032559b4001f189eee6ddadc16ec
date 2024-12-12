@@ -1,0 +1,16 @@
+package collections;
+import java.util.HashMap;
+public class HashMapDemo {
+
+	public static void main(String[] args) {
+		HashMap<String,Integer> hm = new HashMap<>();
+		hm.put("JFS", 400);
+		hm.put("PFS",400);
+		hm.put("MEAN", 250);
+		hm.put("MERN", 250);
+		System.out.println(hm);
+		
+
+	}
+
+}

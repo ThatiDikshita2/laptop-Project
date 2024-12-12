@@ -1,0 +1,56 @@
+package multithreading;
+
+public class ThreadDemo2 {
+	class RedThread extends Thread {
+		@Override
+		public void run() {
+			for (int i = 1; i <= 5; i++) {
+				System.out.println("Red" + i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	//2. Creating user defined thread using runnable interface 
+	class YellowThread implements Runnable {
+		@Override
+		public void run() {
+			for (int i = 1; i <= 5; i++) {
+				System.out.println("Yellow" + i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	public class ThreadDemo {
+		public static void main(String[] args) throws InterruptedException {
+			YellowThread y = new YellowThread();
+			Thread t = new Thread(y);
+			t.start();
+			t.join();
+
+			RedThread j = new RedThread();
+			j.start();// begin thread exception
+			// j.reu(); // new thread cannot be created
+			t.join();
+			// main thread job
+			for (int i = 1; i <= 5; i++) {
+				System.out.println("Green" + i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="maven_project1" project="maven_project1" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.edubridge.maven_project1.CalcTest" time="0.035" displayname="CalcTest" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.CalcTest]">
+    <testcase name="testFindSquare" classname="com.edubridge.maven_project1.CalcTest" time="0.032" displayname="testFindSquare()" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.CalcTest]/[method:testFindSquare()]"/>
+    <testcase name="testFindCube" classname="com.edubridge.maven_project1.CalcTest" time="0.002" displayname="testFindCube()" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.CalcTest]/[method:testFindCube()]"/>
+  </testsuite>
+</testrun>

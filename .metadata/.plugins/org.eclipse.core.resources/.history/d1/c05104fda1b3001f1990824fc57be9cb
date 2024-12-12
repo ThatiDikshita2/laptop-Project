@@ -1,0 +1,24 @@
+package collections;
+import java.util.ArrayDeque;
+import java.util.PriorityQueue;
+public class ArrayDequeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayDeque<Integer> d = new ArrayDeque();
+        System.out.println(q.isEmpty());
+        d.offer(100);
+        d.offer(200);
+        d.offer(300);
+        d.offer(400);
+        System.out.println(d);
+        
+        d.offer(100);
+        d.offer(200);
+        d.offer(300);
+        d.offer(400);
+        System.out.println(d);
+        
+	}
+
+}
