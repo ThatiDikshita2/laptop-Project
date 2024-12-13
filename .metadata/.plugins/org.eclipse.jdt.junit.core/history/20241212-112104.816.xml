@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AuthServiceTest" project="maven_project1" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.edubridge.maven_project1.AuthServiceTest" time="0.025" displayname="AuthServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.AuthServiceTest]">
-    <testcase name="testAuthenticateWithValidDate1" classname="com.edubridge.maven_project1.AuthServiceTest" time="0.022" displayname="Check with valid date" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.AuthServiceTest]/[method:testAuthenticateWithValidDate1()]"/>
-    <testcase name="testAuthenticateWithInValidDate" classname="com.edubridge.maven_project1.AuthServiceTest" time="0.002" displayname="Check with invalid date" uniqueid="[engine:junit-jupiter]/[class:com.edubridge.maven_project1.AuthServiceTest]/[method:testAuthenticateWithInValidDate()]"/>
-  </testsuite>
-</testrun>
