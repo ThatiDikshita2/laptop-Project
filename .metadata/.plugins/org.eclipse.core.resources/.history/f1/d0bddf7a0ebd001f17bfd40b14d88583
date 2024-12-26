@@ -1,0 +1,166 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class LaptopMenu{
+	public static void main(String[] args) throws ClassNotFoundException, SQLException{
+		String driver , url ,user ,password;
+		driver = "com.mysql.cj.jdbc.Driver";
+		url ="jdbc:mysql://localhost:3306/laptopMenu";
+		user = "root";
+		password="root";
+
+		
+		//1. Loading driver
+		Class.forName(driver);
+		
+		//2. Establish Connection
+		Connection con = DriverManager.getConnection(url,user, password);
+		
+		//3.Create Statement Object.
+		Statement st = con.createStatement();
+		
+		//4.Process/Execute select sql query
+		
+
+		    private static void addLaptop() {
+		        try (Connection conn = getConnection();
+		             Scanner scanner = new Scanner(System.in)) {	            
+		            System.out.print("Enter brand: ");
+		            String brand = scanner.nextLine();
+		            System.out.print("Enter model: ");
+		            String model = scanner.nextLine();
+		            System.out.print("Enter price: ");
+		            double price = scanner.nextDouble();
+
+		            String sql = "INSERT INTO laptops (brand, model, price) VALUES (?, ?, ?)";
+		            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+		                pstmt.setString(1, brand);
+		                pstmt.setString(2, model);
+		                pstmt.setDouble(3, price);
+		                pstmt.executeUpdate();
+		                System.out.println("Laptop added successfully.");
+		            }
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        }
+		    }
+
+		    private static Connection getConnection() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+			private static void displayLaptops() {
+		        try (Connection conn = getConnection();
+		             Statement stmt = conn.createStatement();
+		             ResultSet rs = stmt.executeQuery("SELECT * FROM laptops")) {
+
+		            System.out.println("Laptops in the database:");
+		            while (rs.next()) {
+		                System.out.println("ID: " + rs.getInt("id") + ", Brand: " + rs.getString("brand") +
+		                        ", Model: " + rs.getString("model") + ", Price: $" + rs.getDouble("price"));
+		            }
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        }
+		    }
+
+		    private static void updateLaptop() {
+		        try (Connection conn = getConnection();
+		             Scanner scanner = new Scanner(System.in)) {
+		            
+		            System.out.print("Enter laptop ID to update: ");
+		            int id = scanner.nextInt();
+		            scanner.nextLine(); // consume newline
+		            System.out.print("Enter new brand: ");
+		            String brand = scanner.nextLine();
+		            System.out.print("Enter new model: ");
+		            String model = scanner.nextLine();
+		            System.out.print("Enter new price: ");
+		            double price = scanner.nextDouble();
+
+		            String sql = "UPDATE laptops SET brand = ?, model = ?, price = ? WHERE id = ?";
+		            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+		                pstmt.setString(1, brand);
+		                pstmt.setString(2, model);
+		                pstmt.setDouble(3, price);
+		                pstmt.setInt(4, id);
+		                int rowsUpdated = pstmt.executeUpdate();
+		                if (rowsUpdated > 0) {
+		                    System.out.println("Laptop updated successfully.");
+		                } else {
+		                    System.out.println("Laptop not found.");
+		                }
+		            }
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        }
+		    }
+
+		    private static void deleteLaptop() {
+		        try (Connection conn = getConnection();
+		             Scanner scanner = new Scanner(System.in)) {
+		            
+		            System.out.print("Enter laptop ID to delete: ");
+		            int id = scanner.nextInt();
+
+		            String sql = "DELETE FROM laptops WHERE id = ?";
+		            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+		                pstmt.setInt(1, id);
+		                int rowsDeleted = pstmt.executeUpdate();
+		                if (rowsDeleted > 0) {
+		                    System.out.println("Laptop deleted successfully.");
+		                } else {
+		                    System.out.println("Laptop not found.");
+		                }
+		            }
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        }
+		    }
+
+		    public static void main(String[] args) {
+		        Scanner scanner = new Scanner(System.in);
+		        int choice;
+
+		        do {
+		            System.out.println("1 - Add Laptop Details");
+		            System.out.println("2 - Display All Laptop Details");
+		            System.out.println("3 - Update Laptop Details");
+		            System.out.println("4 - Delete Laptop Details");
+		            System.out.println("5 - Exit");
+		            System.out.print("Enter your choice: ");
+		            choice = scanner.nextInt();
+
+		            switch (choice) {
+		                case 1:
+		                    addLaptop();
+		                    break;
+		                case 2:
+		                    displayLaptops();
+		                    break;
+		                case 3:
+		                    updateLaptop();
+		                    break;
+		                case 4:
+		                    deleteLaptop();
+		                    break;
+		                case 5:
+		                    System.out.println("Exiting...");
+		                    break;
+		                default:
+		                    System.out.println("Invalid choice. Please try again.");
+		            }
+		        } while (choice != 5);
+		        
+		        scanner.close();
+		        }
+}
+

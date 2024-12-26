@@ -1,0 +1,31 @@
+package com.edubbridge.contactapp.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+//only one object for one class
+//static by using directly class name to call "getconnection"
+public class DBUtil {
+    private static final Connection con = null;
+    private DBUtil() {}
+    public static Connection getConnection() {
+    	if(con == null) {
+    	String driver, url, user, password;
+		driver = "com.mysql.cj.jdbc.Driver";
+		url = "jdbc:mysql://localhost:3306/edb12980";
+		user = "root";
+		password = "root";
+		
+		try {
+			Class.forName(driver);
+		}catch(ClassNotFoundException e) {
+			System.out.println("No driver found");
+		}
+		try {
+			con = DriverManager.getConnection(url, user, password);
+		}catch( SQLException e) {
+			e.printStackTrace();
+		}
+		}
+} return con;
+}

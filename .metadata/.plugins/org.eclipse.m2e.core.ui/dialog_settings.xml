@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\eclipse_workspace_12980N"/>
 			<item value="C:\eclipse_workspace_11980\java8features\src\java8features\StreamPipeLineDemo.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,12 +27,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.edubbridge.contactapp"/>
 			<item value="com.edubbridge.maven_project1"/>
 		</list>
 		<list key="groupId">
 			<item value="com.edubbridge"/>
 		</list>
 		<list key="artifactId">
+			<item value="contactapp"/>
 			<item value="maven_project1"/>
 		</list>
 		<list key="projectNameTemplate">

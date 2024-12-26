@@ -1,0 +1,143 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class LaptopMenu {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		String driver , url ,user ,password;
+		driver = "com.mysql.cj.jdbc.Driver";
+		url ="jdbc:mysql://localhost:3306/edb12980";
+		user = "root";
+		password="root";
+		String sql = "select * from employee";
+		
+		//1. Loading driver
+		Class.forName(driver);
+		
+		//2. Establish Connection
+		Connection con = DriverManager.getConnection(url,user, password);
+		
+		//3.Create Statement Object.
+		Statement st = con.createStatement();
+		
+		//4.Process/Execute select sql query
+		
+		ResultSet rs = st.executeQuery(sql);
+	
+
+public class Laptop {
+    private int id;
+    private String brand;
+    private String model;
+    private double price;
+
+    // Constructor
+    public Laptop(int id, String brand, String model, double price) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    // toString method to display laptop details
+    @Override
+    public String toString() {
+        return "Laptop [ID=" + id + ", Brand=" + brand + ", Model=" + model + ", Price=" + price + "]";
+    }
+}
+private static List<Laptop> laptops = new ArrayList<>();
+
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int choice;
+
+    // Main menu loop
+    do {
+        System.out.println("\n 1. Add Laptop Details");
+        System.out.println("2. Display All Laptop Details");
+        System.out.println("3. Update Laptop Details");
+        System.out.println("4. Delete Laptop Details");
+        System.out.println("5. Exit");
+        System.out.print("Enter your choice: ");
+        choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                addLaptopDetails(scanner);
+                break;
+            case 2:
+                displayAllLaptops();
+                break;
+            case 3:
+                updateLaptopDetails(scanner);
+                break;
+            case 4:
+                deleteLaptopDetails(scanner);
+                break;
+            case 5:
+                System.out.println("Exiting the application.");
+                break;
+            default:
+                System.out.println("Invalid choice! Please try again.");
+        }
+    } while (choice != 5);
+
+    scanner.close();
+}
+
+// Method to add laptop details
+private static void addLaptopDetails(Scanner scanner) {
+    System.out.print("Enter laptop ID: ");
+    int id = scanner.nextInt();
+    scanner.nextLine(); // Consume newline
+    System.out.print("Enter laptop brand: ");
+    String brand = scanner.nextLine();
+    System.out.print("Enter laptop model: ");
+    String model = scanner.nextLine();
+    System.out.print("Enter laptop price: ");
+    double price = scanner.nextDouble();
+
+     Laptop newLaptop = new Laptop(id, brand, model, price);
+      laptops.add(newLaptop);
+    System.out.println("Laptop details added successfully.");
+
+		
+}
+}

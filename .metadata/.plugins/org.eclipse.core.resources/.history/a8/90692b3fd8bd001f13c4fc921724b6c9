@@ -1,0 +1,11 @@
+package com.edubbridge.contactapp.dao;
+
+import java.util.List;
+import com.edubridge.contatapp.dto.Contact;
+public interface ContactDaoI {
+ int addContact(contact c);
+ List<Contact>getAllContacts();
+ contact getContactByName(String name);
+ int updateContact(Contact c);
+ int deleteContact(String name);
+}

@@ -1,0 +1,8 @@
+package com.edubbridge.contactapp.dto;
+
+public class contact {
+             private int id;
+             private String name;
+             private String email;
+             private long mobile;
+}

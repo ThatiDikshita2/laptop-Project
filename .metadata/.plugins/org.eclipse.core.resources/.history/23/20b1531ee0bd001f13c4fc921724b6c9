@@ -1,0 +1,5 @@
+package com.edubbridge.contactapp.service;
+
+public interface ContactServiceI {
+
+}

@@ -1,0 +1,42 @@
+package com.edubbridge.hibapp1;
+
+import java.lang.module.Configuration;
+
+import javax.transaction.Transaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.edubbridge.hibapp1.model.Employee;
+
+public class SaveEmployee {
+ public static void main(String[] args) {
+	 Employee e1 = new Employee();
+	 e1.setEmployeeName("Wills");
+	 e1.setEmployeeEmail("Wills@gmail.com");
+	 e1.setEmployeeMobile(9898989898L);
+	 e1.setEmployeeSalary(99000.00);
+	 String configFile = "/com/edubbridge/hibapp1/SaveEmployee.java";
+	 //1.Create configuration object
+	 Configuration cfg = new Configuration();
+	 //2.Read hibernate.cfg.xml file
+	 cfg.configure(configFile);
+	 //3.Build SessionFactory object.
+	 SessionFactory factory = cfg.buildSessionFactory();
+	 //4.Open session with DB
+	 Session session = factory.openSession();
+	 //5.Get Transaction
+	 Transaction tx = session.beginTransaction();
+	 try {
+		tx = session.save(e1);   //Insert operation
+		tx.commit();                //Commit transaction
+		System.out.println("Success");
+	 }catch (Exception e) {
+		 tx.rollback();             //Cancel transaction
+		 e.printStackTrace();
+	 } 
+	 //6.Close resources
+	 session.close();
+	 factory.close();
+ }
+}

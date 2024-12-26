@@ -1,0 +1,5 @@
+package com.edubbridge.contactapp.util;
+
+public class DBUtil {
+
+}

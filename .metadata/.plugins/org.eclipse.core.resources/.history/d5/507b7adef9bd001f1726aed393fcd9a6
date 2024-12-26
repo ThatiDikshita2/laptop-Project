@@ -1,0 +1,39 @@
+package com.edubbridge.contactapp.service;
+import com.edubbridge.contactapp.dao.ContactDao;
+import java.util.List;
+
+import com.edubbridge.contactapp.dto.contact;
+public class ContactService implements ContactServiceI {
+     private ContactDao dao = new ContactDao();
+
+	@Override
+	public int addContact(contact c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<contact> getAllContacts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public contact getContactByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateContact(contact c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteContact(String name) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+     
+}
